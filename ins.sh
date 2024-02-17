@@ -3,12 +3,12 @@
 
 target=/mnt
 pacstrap -Syy
-pacstrap -S base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode
+pacstrap -i /mnt base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode
 
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
 
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
-hwclock --systohc
+hwclock --systohc --utc
