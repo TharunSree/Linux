@@ -1,6 +1,8 @@
 
 #!/bin/bash
-pacstrap /mnt base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode
+
+target=/mnt
+pacstrap base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
