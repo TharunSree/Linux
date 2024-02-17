@@ -1,3 +1,5 @@
+
+#!/bin/bash
 sudo pacman -S --nonconfirm nano git neovim neofetch
 
 sudo pacman -S --nonconfirm xorg
