@@ -7,6 +7,7 @@ sudo pacman -S --noconfirm xorg
 sudo pacman -S --noconfirm plasma plasma-wayland-session kde-applications sddm
 
 sudo systemctl enable sddm.service
+sudo systemctl start sddm
 
 sudo pacman -S --noconfirm bluez blueman bluez-utils
 
