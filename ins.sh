@@ -3,7 +3,7 @@
 
 target=/mnt
 pacstrap -Syy
-pacstrap -i --nonconfirm /mnt base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode networkmanager
+pacstrap -i /mnt base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode networkmanager
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
