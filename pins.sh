@@ -1,46 +1,46 @@
-
 #!/bin/bash
-sudo pacman -S --nonconfirm nano git neovim neofetch
 
-sudo pacman -S --nonconfirm xorg
+sudo pacman -S --noconfirm nano git neovim neofetch
 
-sudo pacman -S --nonconfirm plasma plasma-wayland-session kde-applications sddm
+sudo pacman -S --noconfirm xorg
+
+sudo pacman -S --noconfirm plasma plasma-wayland-session kde-applications sddm
 
 sudo systemctl enable sddm.service
 
 sudo systemctl start sddm.service
 
-sudo pacman -S --nonconfirm bluez blueman bluez-utils
+sudo pacman -S --noconfirm bluez blueman bluez-utils
 
 sudo modprobe btusb
 
 sudo systemctl enable bluetooth && sudo systemctl start bluetooth
 
-sudo pacman -S --nonconfirm p7zip unrar tar rsync git neofetch htop exfat-utils fuse-exfat ntfs-3g flac jasper aria2 curl wget
+sudo pacman -S --noconfirm p7zip unrar tar rsync git neofetch htop exfat-utils fuse-exfat ntfs-3g flac jasper aria2 curl wget
 
 git clone https://aur.archlinux.org/yay-bin
 
-sudo pacman -S --nonconfirm jdk-openjdk
+sudo pacman -S --noconfirm jdk-openjdk
 
 cd yay-bin
 
-makepkg -si
+makepkg -si --noconfirm
 
-sudo pacman -S --nonconfirm flatpak
+sudo pacman -S --noconfirm flatpak
 
-yay -S --nonconfirm google-chrome
+yay -S --noconfirm google-chrome
 
-sudo pacman -S --nonconfirm libreoffice-fresh vlc
+sudo pacman -S --noconfirm libreoffice-fresh vlc
 
-yay -Sy --nonconfirm timeshift
+yay -Sy --noconfirm timeshift
 
-sudo pacman -S --nonconfirm ufw
+sudo pacman -S --noconfirm ufw
 
 sudo systemctl enable ufw
 
 sudo systemctl start ufw
 
-yay -S --nonconfirm preload
+yay -S --noconfirm preload
 
 sudo systemctl enable preload && sudo systemctl start preload
 
