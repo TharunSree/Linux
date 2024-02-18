@@ -13,4 +13,4 @@ ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 hwclock --systohc --utc
 EOF
-
+pacman -S --nonconfirm git
