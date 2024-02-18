@@ -21,11 +21,11 @@ sudo pacman -S --noconfirm p7zip unrar tar rsync git neofetch htop exfat-utils f
 
 git clone https://aur.archlinux.org/yay-bin
 
-sudo pacman -S --noconfirm jdk-openjdk
-
 cd yay-bin
 
 makepkg -si --noconfirm
+
+sudo pacman -S --noconfirm jdk-openjdk
 
 sudo pacman -S --noconfirm flatpak
 
