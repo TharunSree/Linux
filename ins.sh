@@ -2,7 +2,7 @@
 #!/bin/bash
 
 target=/mnt
-pacstrap --noconfirm -Syy
+pacstrap -Syy
 pacstrap --noconfirm -i /mnt base base-devel linux linux-zen linux-firmware efibootmgr intel-ucode networkmanager
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
