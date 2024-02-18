@@ -54,4 +54,16 @@ sudo yay -S --nonconfirm touchegg
 
 sudo systemctl enable touchegg
 
-systemctl start touchegg
+sudo systemctl start touchegg
+
+sudo pacmas -S fwupd
+
+sudo fwupdmgr get-devices
+
+sudo fwupdmgr refresh
+
+sudo fwupdmgr get-updates
+
+sudo fwupdmgr update
+
+
