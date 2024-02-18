@@ -1,69 +1,33 @@
 #!/bin/bash
 
-sudo su
+sudo -s <<EOF
 
-sudo pacman -S --noconfirm nano git neovim neofetch
+# Install essential packages
+pacman -S --noconfirm nano git neovim neofetch xorg plasma plasma-wayland-session kde-applications sddm bluez blueman bluez-utils p7zip unrar tar rsync htop exfat-utils fuse-exfat ntfs-3g flac jasper aria2 curl wget jdk-openjdk flatpak libreoffice-fresh vlc ufw preload fwupd
 
-sudo pacman -S --noconfirm xorg
+# Enable and start services
+systemctl enable --now sddm bluetooth ufw preload
 
-sudo pacman -S --noconfirm plasma plasma-wayland-session kde-applications sddm
-
-sudo systemctl enable sddm.service
-sudo systemctl start sddm
-
-sudo pacman -S --noconfirm bluez blueman bluez-utils
-
-sudo modprobe btusb
-
-sudo systemctl enable bluetooth && sudo systemctl start bluetooth
-
-sudo pacman -S --noconfirm p7zip unrar tar rsync git neofetch htop exfat-utils fuse-exfat ntfs-3g flac jasper aria2 curl wget
-
-git clone https://aur.archlinux.org/yay-bin
-
-cd yay-bin
-
+# Install yay
+git clone https://aur.archlinux.org/yay-bin /tmp/yay-bin
+cd /tmp/yay-bin
 makepkg -si --noconfirm
 
-sudo pacman -S --noconfirm jdk-openjdk
+# Install additional packages with yay
+yay -S --noconfirm google-chrome timeshift touchegg
 
-sudo pacman -S --noconfirm flatpak
+# Install auto-cpufreq
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git /tmp/auto-cpufreq
+cd /tmp/auto-cpufreq
+./auto-cpufreq-installer
+auto-cpufreq --install
 
-yay -S --noconfirm google-chrome
+# Activate touchegg service
+systemctl enable --now touchegg
 
-sudo pacman -S --noconfirm libreoffice-fresh vlc
+# Refresh and update fwupd
+fwupdmgr refresh
+fwupdmgr get-updates
+fwupdmgr update
 
-yay -Sy --noconfirm timeshift
-
-sudo pacman -S --noconfirm ufw
-
-sudo systemctl enable ufw
-
-sudo systemctl start ufw
-
-yay -S --noconfirm preload
-
-sudo systemctl enable preload && sudo systemctl start preload
-
-git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq && sudo ./auto-cpufreq-installer
-
-sudo auto-cpufreq --install
-
-sudo yay -S --nonconfirm touchegg
-
-sudo systemctl enable touchegg
-
-sudo systemctl start touchegg
-
-sudo pacmas -S fwupd
-
-sudo fwupdmgr get-devices
-
-sudo fwupdmgr refresh
-
-sudo fwupdmgr get-updates
-
-sudo fwupdmgr update
-
-
+EOF
