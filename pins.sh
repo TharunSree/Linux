@@ -8,8 +8,6 @@ sudo pacman -S --noconfirm plasma plasma-wayland-session kde-applications sddm
 
 sudo systemctl enable sddm.service
 
-sudo systemctl start sddm.service
-
 sudo pacman -S --noconfirm bluez blueman bluez-utils
 
 sudo modprobe btusb
