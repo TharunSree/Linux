@@ -6,7 +6,7 @@ sudo -s <<EOF
 pacman -S --noconfirm nano git neovim neofetch xorg plasma plasma-wayland-session kde-applications sddm bluez blueman bluez-utils p7zip unrar tar rsync htop exfat-utils fuse-exfat ntfs-3g flac jasper aria2 curl wget jdk-openjdk flatpak libreoffice-fresh vlc ufw preload fwupd
 
 # Enable and start services
-systemctl enable --now sddm bluetooth ufw preload
+systemctl enable --now bluetooth ufw preload
 
 # Install yay
 git clone https://aur.archlinux.org/yay-bin /tmp/yay-bin
