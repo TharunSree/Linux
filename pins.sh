@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo su
+
 sudo pacman -S --noconfirm nano git neovim neofetch
 
 sudo pacman -S --noconfirm xorg
@@ -47,3 +49,9 @@ git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer
 
 sudo auto-cpufreq --install
+
+sudo yay -S --nonconfirm touchegg
+
+sudo systemctl enable touchegg
+
+systemctl start touchegg
