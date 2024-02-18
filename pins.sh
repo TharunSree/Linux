@@ -30,4 +30,6 @@ fwupdmgr refresh
 fwupdmgr get-updates
 fwupdmgr update
 
+reboot
+
 EOF
